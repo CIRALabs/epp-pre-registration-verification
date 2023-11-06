@@ -1,24 +1,4 @@
 ---
-###
-# Internet-Draft Markdown Template
-#
-# Rename this file from draft-todo-yourname-protocol.md to get started.
-# Draft name format is "draft-<yourname>-<workgroup>-<name>.md".
-#
-# For initial setup, you only need to edit the first block of fields.
-# Only "title" needs to be changed; delete "abbrev" if your title is short.
-# Any other content can be edited, but be careful not to introduce errors.
-# Some fields will be set automatically during setup if they are unchanged.
-#
-# Don't include "-00" or "-latest" in the filename.
-# Labels in the form draft-<yourname>-<workgroup>-<name>-latest are used by
-# the tools to refer to the current version; see "docname" for example.
-#
-# This template uses kramdown-rfc: https://github.com/cabo/kramdown-rfc
-# You can replace the entire file if you prefer a different format.
-# Change the file extension to match the format (.xml for XML, etc...)
-#
-###
 title: "EPP Pre-Registration Verification"
 abbrev: "EPP Pre-Registration Verification"
 category: Standards Track
@@ -30,11 +10,10 @@ date:
 consensus: true
 v: 3
 area: AREA
-workgroup: WG Working Group
+workgroup: Regext
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - EPP
+ 
 venue:
   group: WG
   type: Working Group
@@ -50,17 +29,15 @@ author:
    org: CIRA
    email: jacques.latour@cira.ca
 
- -
    ins: D. Slaunwhite
    name: Don Slaunwhite
    org: CIRA
    email: don.slaunwhite@cira.ca
 
- -
    ins: Tim Johnson
    name: Jacques Latour
    org: InternetNZ
-   email: Tim Johnson <timj@internetnz.net.nz>
+   email: timj@internetnz.net.nz
 
 normative:
 
@@ -99,10 +76,28 @@ This EPP extension focuses on enabling registrars to submit pre-registration dat
 # Terminology
 
 **Pre-Registration Registrant Information**: This term refers to the data and details submitted by the registrar before the registration of a domain name. It typically includes information provided by the registrant, such as contact information and the intended use of the domain name, and is used for quality verification by the registry as part of the pre-registration process.
+
 **Registrant**: [RFC8499] defines the registrant as "an individual or organization on whose behalf a name in a zone is registered by the registry. A registrant is created in the registry after a successful registration with the registrar.
+
 **AI/ML-Powered Domain Abuse Mitigation**: This term encompasses the use of Artificial Intelligence (AI) and Machine Learning (ML) technologies within the top-level domain (TLD) industry to identify, prevent, and mitigate abusive domain registrations. These technologies are employed to detect and combat various forms of domain abuse, such as spam, phishing, malware distribution, and other malicious activities, ultimately enhancing the security and integrity of domain name space.
+
 **Quality Score**: Define a quality score as the numeric value assigned to a pre-registration registrant based on the AI/ML analysis of their pre-registration data. Mention that higher scores indicate potentially abusive registrations.
+
 **EPP**: RFC 5730: Extensible Provisioning Protocol (EPP) (rfc-editor.org)
+
+# Extension Overview and Command Definition
+
+##Extension Overview
+
+### EPP Protocol Extension Purpose
+This extension is designed to enhance the Extensible Provisioning Protocol (EPP) by introducing mechanisms for registrars to submit pre-registration information to the registry, thus enabling the verification of the quality of domain name registrations using advanced Artificial Intelligence and Machine Learning (AI/ML) techniques. The primary objectives of this extension are as follows:
+
+- Quality Assurance: To proactively assess the quality of domain name registrations and reduce the risk of abusive registrations within the top-level domain (TLD).
+- Enhanced Trust: To improve the overall quality of domain names within the TLD, promoting a safer and more trustworthy internet environment.
+
+###Integration with AI/ML Techniques
+
+The extension integrates AI/ML techniques into the EPP framework, allowing the registry to analyze pre-registration data for signs of potential abuse. These techniques include data analysis, pattern recognition, and predictive modeling. The analysis results in a registrant quality score, which helps the registry make informed decisions regarding the acceptance or rejection of registration requests.
 
 # EPP Command Definition
 
@@ -119,12 +114,86 @@ Command Name: "verify" (New)
 Purpose: To trigger the quality verification process for pre-registration data that has been submitted. Registrars can initiate this command after an initial "create" request.
 XML Element: N/A
 Usage: After pre-registration data is submitted through the "create" command, registrars can use the "verify" command to request the registry's AI/ML analysis and obtain a registrant quality score.
-## XML Schema Definitions
-To support these new EPP commands, the extension defines the XML schema elements necessary for encapsulating pre-registration data, ensuring interoperability between EPP clients and servers.
-[ TBD ]
-Command Flow
 
-# Pre-Registration Data Submission Flow
+## XML Schema Definitions
+
+To support these new EPP commands, the extension defines the XML schema elements necessary for encapsulating pre-registration data, ensuring interoperability between EPP clients and servers.
+
+[ TBD ]
+
+
+# EPP Protocol Extension
+
+## Extended "create" Command for Pre-Registration and Quality Verification
+
+This section outlines the extension of the existing "create" EPP command to accommodate the pre-registration data submission and quality verification process. The extended "create" command enables registrars to provide additional information related to the intended use of the domain name, facilitating quality assurance within the top-level domain (TLD).
+
+### Command Name
+
+Command Name: "create" (Extended)
+
+### Command Purpose
+The extended "create" command serves the following purposes:
+- To create a new domain registration within the TLD.
+- To allow registrars to submit pre-registration data for quality verification.
+- To enhance the quality assurance process by providing registrars the opportunity to convey relevant information about the domain's intended use.
+
+### XML Element Extension
+
+To enable registrars to submit pre-registration data, the "create" command is extended to include an optional XML element, `<pre-registration-data>`. This XML element is included within the "create" command's payload and encapsulates the pre-registration information provided by the registrar.
+
+***XML Element:***
+
+   <pre-registration-data> (Optional)
+
+### Usage
+
+Registrars initiate the extended "create" command in the following manner:
+
+- The registrar includes the `<pre-registration-data>` XML element within the "create" command when submitting a domain registration request.
+- The `<pre-registration-data>` element allows registrars to provide information related to the intended use of the domain, additional contact details, or any other relevant data.
+
+Example "create" Command with Pre-Registration Data:
+
+```
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <create>
+         <!-- Domain creation data -->
+         <domain:create>
+           <!-- Domain details -->
+         </domain:create>
+         <!-- Pre-Registration Data -->
+         <pre-registration-data>
+           <!-- Pre-registration information -->
+         </pre-registration-data>
+       </create>
+     </command>
+   </epp>
+```
+   
+   
+The inclusion of the <pre-registration-data> element within the "create" command allows registries to participate in the quality assurance process and ensures that additional data relevant to the domain's use is considered prior its potentially abusive registration.
+
+Extended "create" Command: The existing "create" command will be extended to include an optional XML element for registrars to submit pre-registration data. This will enable registrars to provide additional information related to the intended use of the domain name.
+
+## Introduction of New Verify EPP Commands
+
+New "verify" Command: A new EPP command, "verify," will be introduced to trigger the quality verification process on the submitted pre-registration data. Registrars can use this command after the initial "create" request.
+It’s important to note that the time to respond to the verify command is important to take in account, should be in the order of seconds and not minutes. 
+
+## Command Flow Overview
+
+Command Flow: The process begins with a registrar initiating a "create" command with additional pre-registration data. The registry, upon receiving the request, stores the data for further analysis. Once the data is collected, the registrar can initiate the "verify" command to trigger the quality verification process, which results in the assignment of a quality score.
+By mapping the EPP verify commands to the new registration process, it demonstrate how the new extension fits into the existing EPP framework and how it can facilitate the pre-registration data submission and quality verification.
+
+
+
+
+# Pre-Registration and Verification Command Flow
+
+## Pre-Registration Data Submission Flow
+
 The command flow within the EPP protocol extension for pre-registration and quality verification is a series of interactions between the registrar and the registry. This section outlines the steps involved in submitting pre-registration data and initiating the quality verification process:
 
 ***Step 1: Registrar Initiates "create" Command***
