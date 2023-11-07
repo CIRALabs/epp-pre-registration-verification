@@ -3,7 +3,7 @@ title: "EPP Pre-Registration Verification"
 abbrev: "EPP Pre-Registration Verification"
 category: Standards Track
 
-docname: draft-epp-pre-registration-verification-latest
+docname: draft-ietf-epp-pre-registration-verification-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
