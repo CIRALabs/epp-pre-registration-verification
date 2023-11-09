@@ -232,6 +232,62 @@ The registry sends the registrant quality score as part of the "verify" command 
 
 Depending on the quality score received, the registrar can make informed decisions regarding the acceptance, rejection, or further review of the domain registration request.
 
+# Pre-Registration Quality Score ***Guidance***
+
+This section provides a range of registrant quality scores with corresponding actionable actions for the proposed quality verification process, where 0 indicates a good registration and 100 signifies an absolutely malicious registration:
+
+## Score 0 - 20 (Non-Abusive):
+
+### Actionable Actions:
+- The registration appears to be non-abusive and legitimate.
+- The address and information provided by the registrant match and seem trustworthy.
+- No immediate action required.
+
+
+## Score 21 - 40 (Low Suspicion):
+
+### Actionable Actions:
+
+- The registration raises minimal suspicion.
+- While the information appears consistent, there might be subtle irregularities.
+- Regular monitoring and further review may be necessary.
+
+## Score 41 - 60 (Moderate Suspicion):
+
+## Actionable Actions:
+
+- The registration raises moderate suspicion.
+- Some elements in the registration data seem incongruent or questionable.
+- Investigate further and consider additional verification steps.
+- Suspend the registration at the Registry? (after Registrar registration)
+
+## Score 61 - 80 (High Suspicion):
+
+### Actionable Actions:
+
+- The registration exhibits a high level of suspicion.
+- Several aspects of the registration data appear inconsistent or potentially problematic.
+- Immediate investigation and verification are necessary.
+- Suspend the registration at the Registar
+
+## Score 81 - 99 (Very High Suspicion):
+
+### Actionable Actions:
+
+- The registration is highly suspicious and raises significant concerns.
+- Multiple elements in the registration data are irregular or seem malicious.
+- Implement rigorous verification and consider delaying or rejecting the registration.
+
+## Score 100 (Absolutely Malicious):
+
+### Actionable Actions:
+
+- The registration is deemed absolutely malicious and poses a severe threat.
+- Clear evidence of fraudulent activity or malicious intent is present.
+- Reject the registration and take appropriate measures to prevent abuse.
+
+These quality score ranges and associated actions provide guidance for registrars and registries in evaluating the legitimacy of domain registrations. The specific actions to be taken can vary depending on the policies and procedures of the TLD registry and the severity of the suspicions raised by the quality score.
+
 ## Error Handling
 
 [TBD]
