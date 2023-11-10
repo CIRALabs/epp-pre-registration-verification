@@ -77,7 +77,7 @@ This EPP extension focuses on enabling registrars to submit pre-registration dat
 
 **Pre-Registration Registrant Information**: This term refers to the data and details submitted by the registrar before the registration of a domain name. It typically includes information provided by the registrant, such as contact information and the intended use of the domain name, and is used for quality verification by the registry as part of the pre-registration process.
 
-**Registrant**: [RFC8499] defines the registrant as "an individual or organization on whose behalf a name in a zone is registered by the registry. A registrant is created in the registry after a successful registration with the registrar.
+**Registrant**: RFC8499 defines the registrant as "an individual or organization on whose behalf a name in a zone is registered by the registry. A registrant is created in the registry after a successful registration with the registrar.
 
 **AI/ML-Powered Domain Abuse Mitigation**: This term encompasses the use of Artificial Intelligence (AI) and Machine Learning (ML) technologies within the top-level domain (TLD) industry to identify, prevent, and mitigate abusive domain registrations. These technologies are employed to detect and combat various forms of domain abuse, such as spam, phishing, malware distribution, and other malicious activities, ultimately enhancing the security and integrity of domain name space.
 
@@ -106,7 +106,7 @@ This extension introduces new EPP commands to facilitate pre-registration data s
 ### "create" Command Extension
 Command Name: "create" (Extended)
 Purpose: To create a new domain registration while including additional XML elements for registrars to submit pre-registration data. Registrars can provide information such as the intended use of the domain and other relevant details.
-XML Element: <pre-registration-data> - This element encapsulates the pre-registration data submitted by the registrar.
+XML Element: '<pre-registration-data>' - This element encapsulates the pre-registration data submitted by the registrar.
 Usage: Registrars initiate the "create" command with the pre-registration data, which is then stored by the registry for later analysis.
 ### "verify" Command
 
@@ -119,7 +119,7 @@ Usage: After pre-registration data is submitted through the "create" command, re
 
 To support these new EPP commands, the extension defines the XML schema elements necessary for encapsulating pre-registration data, ensuring interoperability between EPP clients and servers.
 
-[ TBD ]
+TBD
 
 
 # EPP Protocol Extension
@@ -144,7 +144,7 @@ To enable registrars to submit pre-registration data, the "create" command is ex
 
 ***XML Element:***
 
-   <pre-registration-data> (Optional)
+   '<pre-registration-data>' (Optional)
 
 ### Usage
 
@@ -155,25 +155,23 @@ Registrars initiate the extended "create" command in the following manner:
 
 Example "create" Command with Pre-Registration Data:
 
-```
-<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
-     <command>
-       <create>
-         <!-- Domain creation data -->
-         <domain:create>
-           <!-- Domain details -->
-         </domain:create>
-         <!-- Pre-Registration Data -->
-         <pre-registration-data>
-           <!-- Pre-registration information -->
-         </pre-registration-data>
-       </create>
-     </command>
-   </epp>
-```
+'<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">'
+'     <command>'
+'       <create>'
+'         <!-- Domain creation data -->'
+'         <domain:create>'
+'           <!-- Domain details -->'
+'         </domain:create>'
+'         <!-- Pre-Registration Data -->'
+'         <pre-registration-data>'
+'           <!-- Pre-registration information -->'
+'         </pre-registration-data>'
+'       </create>'
+'     </command>'
+'   </epp>'
 
 
-The inclusion of the <pre-registration-data> element within the "create" command allows registries to participate in the quality assurance process and ensures that additional data relevant to the domain's use is considered prior its potentially abusive registration.
+The inclusion of the '<pre-registration-data>' element within the "create" command allows registries to participate in the quality assurance process and ensures that additional data relevant to the domain's use is considered prior its potentially abusive registration.
 
 Extended "create" Command: The existing "create" command will be extended to include an optional XML element for registrars to submit pre-registration data. This will enable registrars to provide additional information related to the intended use of the domain name.
 
@@ -202,7 +200,7 @@ The process begins when a registrar initiates a modified "create" command, exten
 
 ***Step 2: Registrar Includes Pre-Registration Data***
 
-Within the "create" command, the registrar includes the <pre-registration-data> XML element. This element encapsulates the pre-registration information, such as the intended use of the domain and any other relevant data.
+Within the "create" command, the registrar includes the '<pre-registration-data>' XML element. This element encapsulates the pre-registration information, such as the intended use of the domain and any other relevant data.
 
 ***Step 3: Registry Receives and Stores Pre-Registration Data***
 
@@ -251,6 +249,7 @@ This section provides a range of registrant quality scores with corresponding ac
 - The registration raises minimal suspicion.
 - While the information appears consistent, there might be subtle irregularities.
 - Regular monitoring and further review may be necessary.
+- Regular monitoring and further review may be necessary.
 
 ## Score 41 - 60 (Moderate Suspicion):
 
@@ -290,11 +289,11 @@ These quality score ranges and associated actions provide guidance for registrar
 
 ## Error Handling
 
-[TBD]
+TBD
 
 ## Registration Timing Considerations
 
-[has to be quick, if too slow a timer must be defined to mark the registration verification as incomplete, need a specific workflow ]
+This process has to be quick, if too slow a timer must be defined to mark the registration verification as incomplete, need a specific workflow
 
 
 
