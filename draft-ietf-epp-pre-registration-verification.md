@@ -1,7 +1,7 @@
 ---
 title: "EPP Pre-Registration Verification"
 abbrev: "EPP Pre-Registration Verification"
-category: Standards Track
+category: std
 
 docname: draft-ietf-epp-pre-registration-verification-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
@@ -10,7 +10,7 @@ date:
 consensus: true
 v: 3
 area: AREA
-workgroup: Regext
+workgroup: 
 keyword:
  - EPP
 
@@ -61,10 +61,10 @@ The current EPP protocol lacks mechanisms for registrars to submit pre-registrat
 A registrant wants to register domain names within a TLD registry via a registrar. To ensure the quality of registrations and prevent abusive domains, the registrar uses the proposed EPP extension to submit pre-registration data of the registrant to the registry. The registry, equipped with AI/ML techniques or services, analyzes this data to assign a registrant quality score back to the registrar. Based on this score, the registrar can decide whether to accept, reject or put on hold the registration request.
 ## Importance and Benefits
 Addressing the quality of the registrant data before the actual registration process occurs brings many benefits.  Adding a pre-registration process benefits the domain registration ecosystem by:
-•	Potentially reducing the number of malicious registration and frauds and reducing operating costs to registrar and registry in responding to the abuse.
-•	Ensuring the quality of domain registrations is crucial to maintaining the trust and reputation of the TLD. Abusive registrations can lead to various issues, including spam, phishing, and other malicious activities.
-•	The proposed extension enables registries to proactively identify and block abusive registrations, thereby improving the overall quality of domain names within the TLD. This can lead to a safer and more reliable internet for end-users.
-•	And contributing to a safer internet.
+- Potentially reducing the number of malicious registration and frauds and reducing operating costs to registrar and registry in responding to the abuse.
+- Ensuring the quality of domain registrations is crucial to maintaining the trust and reputation of the TLD. Abusive registrations can lead to various issues, including spam, phishing, and other malicious activities.
+- The proposed extension enables registries to proactively identify and block abusive registrations, thereby improving the overall quality of domain names within the TLD. This can lead to a safer and more reliable internet for end-users.
+- And contributing to a safer internet.
 ## Scope of the Extension - Verification
 This EPP extension focuses on enabling registrars to submit pre-registration data to the registry and receive a registrant quality score based on abuse AI/ML analysis. It does not address other aspects of domain registration, such as pricing or dispute resolution.
 
@@ -106,7 +106,7 @@ This extension introduces new EPP commands to facilitate pre-registration data s
 ### "create" Command Extension
 Command Name: "create" (Extended)
 Purpose: To create a new domain registration while including additional XML elements for registrars to submit pre-registration data. Registrars can provide information such as the intended use of the domain and other relevant details.
-XML Element: '<pre-registration-data>' - This element encapsulates the pre-registration data submitted by the registrar.
+XML Element: `<pre-registration-data>` - This element encapsulates the pre-registration data submitted by the registrar.
 Usage: Registrars initiate the "create" command with the pre-registration data, which is then stored by the registry for later analysis.
 ### "verify" Command
 
@@ -144,7 +144,7 @@ To enable registrars to submit pre-registration data, the "create" command is ex
 
 ***XML Element:***
 
-   '<pre-registration-data>' (Optional)
+- `<pre-registration-data>` (Optional)
 
 ### Usage
 
@@ -155,23 +155,25 @@ Registrars initiate the extended "create" command in the following manner:
 
 Example "create" Command with Pre-Registration Data:
 
-'<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">'
-'     <command>'
-'       <create>'
-'         <!-- Domain creation data -->'
-'         <domain:create>'
-'           <!-- Domain details -->'
-'         </domain:create>'
-'         <!-- Pre-Registration Data -->'
-'         <pre-registration-data>'
-'           <!-- Pre-registration information -->'
-'         </pre-registration-data>'
-'       </create>'
-'     </command>'
-'   </epp>'
+~~~ xml
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <create>
+         <!-- Domain creation data -->
+         <domain:create>
+           <!-- Domain details -->
+         </domain:create>
+         <!-- Pre-Registration Data -->
+         <pre-registration-data>
+           <!-- Pre-registration information -->
+         </pre-registration-data>
+       </create>
+     </command>
+   </epp>
+~~~
 
 
-The inclusion of the '<pre-registration-data>' element within the "create" command allows registries to participate in the quality assurance process and ensures that additional data relevant to the domain's use is considered prior its potentially abusive registration.
+The inclusion of the `<pre-registration-data>` element within the "create" command allows registries to participate in the quality assurance process and ensures that additional data relevant to the domain's use is considered prior its potentially abusive registration.
 
 Extended "create" Command: The existing "create" command will be extended to include an optional XML element for registrars to submit pre-registration data. This will enable registrars to provide additional information related to the intended use of the domain name.
 
@@ -200,7 +202,7 @@ The process begins when a registrar initiates a modified "create" command, exten
 
 ***Step 2: Registrar Includes Pre-Registration Data***
 
-Within the "create" command, the registrar includes the '<pre-registration-data>' XML element. This element encapsulates the pre-registration information, such as the intended use of the domain and any other relevant data.
+Within the "create" command, the registrar includes the `<pre-registration-data>` XML element. This element encapsulates the pre-registration information, such as the intended use of the domain and any other relevant data.
 
 ***Step 3: Registry Receives and Stores Pre-Registration Data***
 
