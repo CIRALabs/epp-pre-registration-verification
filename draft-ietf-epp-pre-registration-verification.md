@@ -1,18 +1,18 @@
 ---
 title: "EPP Pre-Registration Verification"
 abbrev: "EPP Pre-Registration Verification"
-category: std
-
 docname: draft-ietf-epp-pre-registration-verification-latest
+category: std
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
 consensus: true
-v: 3
-area: AREA
-workgroup:
-keyword:
- - EPP
+v: 0
+area:
+workgroup: 
+stand_alone: true
+keyword: Internet-Draft
+pi: [toc, sortrefs, symrefs]
 
 venue:
   group: WG
@@ -58,13 +58,16 @@ This Internet Draft introduces an extension to the Extensible Provisioning Proto
 ## Problem Statement
 The current EPP protocol lacks mechanisms for registrars to submit pre-registration data to the registry for quality verification. This gap leads to potential issues with abusive domain registrations, which can harm the integrity of the top-level domain (TLD).
 ## Use Case Description
+
 A registrant wants to register domain names within a TLD registry via a registrar. To ensure the quality of registrations and prevent abusive domains, the registrar uses the proposed EPP extension to submit pre-registration data of the registrant to the registry. The registry, equipped with AI/ML techniques or services, analyzes this data to assign a registrant quality score back to the registrar. Based on this score, the registrar can decide whether to accept, reject or put on hold the registration request.
+
 ## Importance and Benefits
 Addressing the quality of the registrant data before the actual registration process occurs brings many benefits.  Adding a pre-registration process benefits the domain registration ecosystem by:
 - Potentially reducing the number of malicious registration and frauds and reducing operating costs to registrar and registry in responding to the abuse.
 - Ensuring the quality of domain registrations is crucial to maintaining the trust and reputation of the TLD. Abusive registrations can lead to various issues, including spam, phishing, and other malicious activities.
 - The proposed extension enables registries to proactively identify and block abusive registrations, thereby improving the overall quality of domain names within the TLD. This can lead to a safer and more reliable internet for end-users.
 - And contributing to a safer internet.
+
 ## Scope of the Extension - Verification
 This EPP extension focuses on enabling registrars to submit pre-registration data to the registry and receive a registrant quality score based on abuse AI/ML analysis. It does not address other aspects of domain registration, such as pricing or dispute resolution.
 
@@ -87,7 +90,7 @@ This EPP extension focuses on enabling registrars to submit pre-registration dat
 
 # Extension Overview and Command Definition
 
-##Extension Overview
+## Extension Overview
 
 ### EPP Protocol Extension Purpose
 This extension is designed to enhance the Extensible Provisioning Protocol (EPP) by introducing mechanisms for registrars to submit pre-registration information to the registry, thus enabling the verification of the quality of domain name registrations using advanced Artificial Intelligence and Machine Learning (AI/ML) techniques. The primary objectives of this extension are as follows:
@@ -95,7 +98,7 @@ This extension is designed to enhance the Extensible Provisioning Protocol (EPP)
 - Quality Assurance: To proactively assess the quality of domain name registrations and reduce the risk of abusive registrations within the top-level domain (TLD).
 - Enhanced Trust: To improve the overall quality of domain names within the TLD, promoting a safer and more trustworthy internet environment.
 
-###Integration with AI/ML Techniques
+### Integration with AI/ML Techniques
 
 The extension integrates AI/ML techniques into the EPP framework, allowing the registry to analyze pre-registration data for signs of potential abuse. These techniques include data analysis, pattern recognition, and predictive modeling. The analysis results in a registrant quality score, which helps the registry make informed decisions regarding the acceptance or rejection of registration requests.
 

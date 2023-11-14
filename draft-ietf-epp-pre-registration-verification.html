@@ -12,11 +12,11 @@
        This Internet Draft introduces an extension to the Extensible Provisioning Protocol (EPP) for top-level domain (TLD) registries, enabling registrars to submit pre-registration information for domain names. The extension facilitates quality verification by the registry, employing advanced Artificial Intelligence and Machine Learning (AI/ML) techniques. Pre-registrations are assigned a quality score based on the analysis of the submitted data, ranging from 0 for non-abusive registrations to 100 for potentially abusive ones. This extension addresses the critical need to proactively identify and mitigate abusive domain registrations within TLDs, contributing to a safer and more reliable internet environment. The document outlines the EPP command definitions, XML schemas, data flow, and security considerations necessary to implement this innovative quality assurance mechanism, thereby enhancing the integrity and trustworthiness of TLD registrations. 
     " name="description">
 <meta content="xml2rfc 3.18.2" name="generator">
-<meta content="EPP" name="keyword">
+<meta content="Internet-Draft" name="keyword">
 <meta content="draft-ietf-epp-pre-registration-verification-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.18.2
-    Python 3.10.12
+    Python 3.8.10
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
@@ -28,7 +28,7 @@
     requests 2.31.0
     setuptools 68.2.2
     six 1.16.0
-    wcwidth 0.2.9
+    wcwidth 0.2.10
 -->
 <link href="draft-ietf-epp-pre-registration-verification.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1136,15 +1136,21 @@ svg :is([fill="white"], [fill^="#fff"]) {
         </h2>
 <nav class="toc"><ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
-            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+            <p id="section-toc.1-1.1.1"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
                 <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="auto internal xref">1.1</a>.  <a href="#name-problem-statement" class="internal xref">Problem Statement</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.2">
+                <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="auto internal xref">1.2</a>.  <a href="#name-importance-and-benefits" class="internal xref">Importance and Benefits</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.3">
+                <p id="section-toc.1-1.1.2.3.1" class="keepWithNext"><a href="#section-1.3" class="auto internal xref">1.3</a>.  <a href="#name-scope-of-the-extension-veri" class="internal xref">Scope of the Extension - Verification</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-terminology" class="internal xref">Terminology</a></p>
@@ -1302,16 +1308,28 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-problem-statement" class="section-name selfRef">Problem Statement</a>
         </h3>
 <p id="section-1.1-1">The current EPP protocol lacks mechanisms for registrars to submit pre-registration data to the registry for quality verification. This gap leads to potential issues with abusive domain registrations, which can harm the integrity of the top-level domain (TLD).
-## Use Case Description
-A registrant wants to register domain names within a TLD registry via a registrar. To ensure the quality of registrations and prevent abusive domains, the registrar uses the proposed EPP extension to submit pre-registration data of the registrant to the registry. The registry, equipped with AI/ML techniques or services, analyzes this data to assign a registrant quality score back to the registrar. Based on this score, the registrar can decide whether to accept, reject or put on hold the registration request.
-## Importance and Benefits
-Addressing the quality of the registrant data before the actual registration process occurs brings many benefits.  Adding a pre-registration process benefits the domain registration ecosystem by:
+## Use Case Description<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+<p id="section-1.1-2">A registrant wants to register domain names within a TLD registry via a registrar. To ensure the quality of registrations and prevent abusive domains, the registrar uses the proposed EPP extension to submit pre-registration data of the registrant to the registry. The registry, equipped with AI/ML techniques or services, analyzes this data to assign a registrant quality score back to the registrar. Based on this score, the registrar can decide whether to accept, reject or put on hold the registration request.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="importance-and-benefits">
+<section id="section-1.2">
+        <h3 id="name-importance-and-benefits">
+<a href="#section-1.2" class="section-number selfRef">1.2. </a><a href="#name-importance-and-benefits" class="section-name selfRef">Importance and Benefits</a>
+        </h3>
+<p id="section-1.2-1">Addressing the quality of the registrant data before the actual registration process occurs brings many benefits.  Adding a pre-registration process benefits the domain registration ecosystem by:
 - Potentially reducing the number of malicious registration and frauds and reducing operating costs to registrar and registry in responding to the abuse.
 - Ensuring the quality of domain registrations is crucial to maintaining the trust and reputation of the TLD. Abusive registrations can lead to various issues, including spam, phishing, and other malicious activities.
 - The proposed extension enables registries to proactively identify and block abusive registrations, thereby improving the overall quality of domain names within the TLD. This can lead to a safer and more reliable internet for end-users.
-- And contributing to a safer internet.
-## Scope of the Extension - Verification
-This EPP extension focuses on enabling registrars to submit pre-registration data to the registry and receive a registrant quality score based on abuse AI/ML analysis. It does not address other aspects of domain registration, such as pricing or dispute resolution.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
+- And contributing to a safer internet.<a href="#section-1.2-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="scope-of-the-extension-verification">
+<section id="section-1.3">
+        <h3 id="name-scope-of-the-extension-veri">
+<a href="#section-1.3" class="section-number selfRef">1.3. </a><a href="#name-scope-of-the-extension-veri" class="section-name selfRef">Scope of the Extension - Verification</a>
+        </h3>
+<p id="section-1.3-1">This EPP extension focuses on enabling registrars to submit pre-registration data to the registry and receive a registrant quality score based on abuse AI/ML analysis. It does not address other aspects of domain registration, such as pricing or dispute resolution.<a href="#section-1.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
