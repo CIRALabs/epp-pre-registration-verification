@@ -8,9 +8,8 @@ number:
 date:
 consensus: true
 v: 0
-area:
-workgroup: 
-stand_alone: true
+area: AREA
+workgroup: workgroup
 keyword: Internet-Draft
 pi: [toc, sortrefs, symrefs]
 
@@ -18,9 +17,8 @@ venue:
   group: WG
   type: Working Group
   mail: WG@example.com
-  arch: https://example.com/WG
-  github: USER/REPO
-  latest: https://example.com/LATEST
+  github: "CIRALabs/epp-pre-registration-verification"
+  latest: "https://github.com/CIRALabs/epp-pre-registration-verification/blob/main/draft-ietf-epp-pre-registration-verification.html"
 
 author:
  -

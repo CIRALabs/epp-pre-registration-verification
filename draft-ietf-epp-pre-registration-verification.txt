@@ -2,7 +2,7 @@
 
 
 
-Network Working Group                                          J. Latour
+workgroup                                                      J. Latour
 Internet-Draft                                             D. Slaunwhite
 Intended status: Standards Track                                    CIRA
 Expires: 17 May 2024                                         Tim Johnson
@@ -36,16 +36,17 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-ietf-epp-pre-
-   registration-verification/.
+   https://github.com/CIRALabs/epp-pre-registration-
+   verification/blob/main/draft-ietf-epp-pre-registration-
+   verification.html.  Status information for this document may be found
+   at https://datatracker.ietf.org/doc/draft-ietf-epp-pre-registration-
+   verification/.
 
    Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   mailing list (mailto:WG@example.com).
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/CIRALabs/epp-pre-registration-verification.
 
 Status of This Memo
 
