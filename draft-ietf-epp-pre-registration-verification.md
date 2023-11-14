@@ -28,12 +28,12 @@ author:
    name: Jacques Latour
    org: CIRA
    email: jacques.latour@cira.ca
-
+ -
    ins: D. Slaunwhite
    name: Don Slaunwhite
    org: CIRA
    email: don.slaunwhite@cira.ca
-
+ -
    ins: Tim Johnson
    name: Jacques Latour
    org: InternetNZ
