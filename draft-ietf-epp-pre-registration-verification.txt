@@ -5,7 +5,7 @@
 workgroup                                                      J. Latour
 Internet-Draft                                             D. Slaunwhite
 Intended status: Standards Track                                    CIRA
-Expires: 17 May 2024                                         Tim Johnson
+Expires: 17 May 2024                                          T. Johnson
                                                               InternetNZ
                                                         14 November 2023
 
@@ -577,6 +577,6 @@ Authors' Addresses
    Email: don.slaunwhite@cira.ca
 
 
-   Jacques Latour
+   Tim Johnson
    InternetNZ
    Email: timj@internetnz.net.nz
