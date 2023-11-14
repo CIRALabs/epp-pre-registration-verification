@@ -32,8 +32,8 @@ author:
    org: CIRA
    email: don.slaunwhite@cira.ca
  -
-   ins: Tim Johnson
-   name: Jacques Latour
+   ins: T. Johnson
+   name: Tim Johnson
    org: InternetNZ
    email: timj@internetnz.net.nz
 
