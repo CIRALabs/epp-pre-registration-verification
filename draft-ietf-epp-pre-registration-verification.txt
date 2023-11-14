@@ -2,10 +2,12 @@
 
 
 
-Network Working Group                                        Tim Johnson
-Internet-Draft                                                InternetNZ
-Intended status: Standards Track                        13 November 2023
-Expires: 16 May 2024
+Network Working Group                                          J. Latour
+Internet-Draft                                             D. Slaunwhite
+Intended status: Standards Track                                    CIRA
+Expires: 17 May 2024                                         Tim Johnson
+                                                              InternetNZ
+                                                        14 November 2023
 
 
                    EPP Pre-Registration Verification
@@ -60,7 +62,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 May 2024.
+   This Internet-Draft will expire on 17 May 2024.
 
 Copyright Notice
 
@@ -120,7 +122,7 @@ Table of Contents
    10. IANA Considerations
    11. Normative References
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -552,7 +554,17 @@ Acknowledgments
 
    TODO acknowledge.
 
-Author's Address
+Authors' Addresses
+
+   Jacques Latour
+   CIRA
+   Email: jacques.latour@cira.ca
+
+
+   Don Slaunwhite
+   CIRA
+   Email: don.slaunwhite@cira.ca
+
 
    Jacques Latour
    InternetNZ
