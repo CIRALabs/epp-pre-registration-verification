@@ -179,8 +179,8 @@ Extended "create" Command: The existing "create" command will be extended to inc
 
 ## Introduction of New Verify EPP Commands
 
-New "verify" Command: A new EPP command, "verify," will be introduced to trigger the quality verification process on the submitted pre-registration data. Registrars can use this command after the initial "create" request.
-It’s important to note that the time to respond to the verify command is important to take in account, should be in the order of seconds and not minutes.
+New "verify" Command: A new EPP command, "verify" will be introduced to trigger the quality verification process on the submitted pre-registration data. Registrars can use this command after the initial "create" request.
+It's important to note that the time to respond to the verify command is important to take in account, should be in the order of seconds and not minutes.
 
 ## Command Flow Overview
 
